@@ -1,0 +1,32 @@
+<script>
+    // Invokes the server-side function when the form is filled and performs an action when finished
+    function handle_tag_entities_origins_FormSubmit(formObject) {
+      onProcessing()
+      google.script.run.withSuccessHandler(onSuccess).write_tag_entities_and_origins(formObject);
+    }
+
+    // Invokes the server-side function when the form is filled and performs an action when finished
+    function handle_tag_unique_origins_FormSubmit(formObject) {
+      onProcessing()
+      google.script.run.withSuccessHandler(onSuccess).write_tag_unique_origins(formObject);
+    }
+
+    // Invokes the server-side function when the form is filled and performs an action when finished
+    function handle_tag_entities_FormSubmit(formObject) {
+      onProcessing()
+      google.script.run.withSuccessHandler(onSuccess).write_tag_entities(formObject);
+    }
+
+    // Defines what happens if the server-side function is successful
+    function onSuccess (url) {
+      let div = document.getElementById('output');
+      div.innerHTML = '<br>La operación ha terminado, puedes cerrar la ventana.';
+      // google.script.host.close();
+    }
+
+    // Defines what happens if the server-side function is loading
+    function onProcessing () {
+      let div = document.getElementById('output');
+      div.innerHTML = '<br>Recogiendo información. No cierres la ventana.';
+    }
+</script>

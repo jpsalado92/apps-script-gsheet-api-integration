@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base target="_top">
+  <?!= include('stylesheet'); ?>
+</head>
+
+<body>
+  <form id="myForm" onsubmit="handle_tag_entities_origins_FormSubmit(this)">
+    <label for="tag">Tag:</label> <input id="tag" name="tag" placeholder="i183_obs_ara" type="text"><br>
+    <br>
+    <input type="submit" value="Ejecutar" id="submit_button">
+  </form>
+  <div id="output"></div>
+  <?!= include('javascript'); ?>
+</body>
+
+</html>
